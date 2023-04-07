@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Inputs</title>
+    <style>
+        /* Efeito degradê na página*/
+        body {
+            background: linear-gradient(to top, #442444, #1e4949);
+            /*método degradê*/
+            color: rgb(255, 193, 247);
+            font: normal 20pt arial;
+            height: 100vh;
+        }
+
+        /* Efeito degradê no título */
+        h1 {
+            background: linear-gradient(to right, #ff00ff, #00ffff);
+            /*método degradê*/
+            -webkit-background-clip: text;
+            background-clip: text;
+            /*o fundo recorta envolta do texto*/
+            -webkit-text-fill-color: transparent;
+            /*A cor primária do texto some mostrando o fundo*/
+            font-style: italic;
+            text-shadow: 7px 2px 1px #1e4949;
+        }
+
+        /* Caixas de Texto menores */
+        input {
+            font: normal 20pt Arial;
+            width: 100px;
+            background: linear-gradient(to top, #ffdeff, #d1ffff);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        input#botão {
+            background: linear-gradient(to top, #ff95ff, #86ffff);
+
+        }
+
+        input#botão:hover {
+            background: linear-gradient(to top, #ffb7ff, #a8ffff);
+        }
+
+        input#botão:active {
+            background: linear-gradient(to top, #c771c7, #64c2c2);
+            transform: translateY(2px);
+        }
+
+        /* resposta mais pra baixo */
+        div#resposta {
+            margin-top: 40px;
+            background-color: #64c2c27e;
+            border-radius: 15px;
+            text-align: center;
+            height: 70px;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input id="botão" type="button" value="Somar" onclick="somar()">
+    <div id="resposta">Resultado:</div>
+    <script>
+        function somar() {
+            var n1 = Number(document.getElementById("txtn1").value)
+            var n2 = Number(document.getElementById("txtn2").value)
+            var resposta = document.getElementById("resposta")
+            var soma = n1 + n2
+            resposta.innerHTML = `Resultado:</br> <strong>${soma}</strong>`
+        }
+    </script>
+</body>
+
+</html>
